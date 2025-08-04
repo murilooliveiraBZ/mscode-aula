@@ -4,4 +4,5 @@ tratar a função cpfNaoConfiavel para preencher com zero a esquerda caso seja u
 
 TEM UMA PEGADINHA
 
-R:Agora o função verifica o tamanho para tratar como cpf ou cnpj e usa str_pad para preencher com zeros a esquerda.
+
+R:Agora a função verifica o tamanho para tratar como cpf ou cnpj e usa str_pad para preencher com zeros a esquerda.
