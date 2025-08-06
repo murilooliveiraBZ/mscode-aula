@@ -1,6 +1,6 @@
 <?php
 
-abstract class FormaDeAndar
+abstract class FormaDeAndarAbstract
 {
     public function andar(): string
     {

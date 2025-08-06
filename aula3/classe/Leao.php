@@ -1,9 +1,9 @@
 <?php
 
 require_once 'AnimalInterface.php';
-require_once 'FormaDeAndar.php';
+require_once 'FormaDeAndarAbstract.php';
 
-class Leao extends FormaDeAndar implements AnimalInterface
+class Leao extends FormaDeAndarAbstract implements AnimalInterface
 {
 
     public function isAnimalRational(): bool
