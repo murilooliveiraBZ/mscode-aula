@@ -10,7 +10,7 @@ require_once './classe/CpfCnpj.php';
 $cpfCnpj = CpfCnpj::cpfNaoConfiavel('82.359.808/0001-24');
 
 $pessoa = new Pessoa(
-    'Rejman Nascimento',
+    'teste',
     $cpfCnpj,
     new DateTimeImmutable('1998-08-21'),
 );
