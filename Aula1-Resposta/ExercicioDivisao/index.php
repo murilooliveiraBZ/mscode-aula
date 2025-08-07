@@ -1,12 +1,15 @@
 <?php 
     $divisao = "";
     $msgErro = "";
-    if(isset($_POST['number1']) && isset($_POST['number2']) && $_POST['number2'] != 0){
+    try {
+    if(isset($_POST['number1']) && isset($_POST['number2'])){
       $number1 = $_POST['number1'];
       $number2 = $_POST['number2'];
       $divisao = $number1 / $number2;
-      $msgErro = "";
     }
+} catch (\Throwable $e) {
+      $msgErro = $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +37,11 @@
     
     <div>
         <?php 
-            if($_POST['number2'] == 0){
-                echo "Divisão por 0(zero) é impossível";
+             if($msgErro !== ''){
+                echo $msgErro;
               }
         ?>
     </div>
 </body>
+
 </html>
