@@ -12,16 +12,9 @@ class CpfCnpj
 
     public static function cpfNaoConfiavel(string $cpfNaoConfiavel): self
 {
-    // Remove tudo que não é número
+    
     $valorNovo = preg_replace('/[^0-9]/', '', $cpfNaoConfiavel);
-
-    // Se for até 11 dígitos, assume CPF
-    if (strlen($valorNovo) <= 11) {
-        $valorNovo = str_pad($valorNovo, 11, '0', STR_PAD_LEFT);
-    } else {
-        // Caso contrário, assume CNPJ
-        $valorNovo = str_pad($valorNovo, 14, '0', STR_PAD_LEFT);
-    }
+    $valorNovo = str_pad($valorNovo, strlen($valorNovo) <= 11 ? 11 : 14, '0', STR_PAD_LEFT);
 
     return new self($valorNovo);
 }
