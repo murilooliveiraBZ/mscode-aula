@@ -18,7 +18,7 @@ if (!empty($_POST)) {
     $conn = (new Database())->getConnection();
     $sql = 'INSERT INTO alunos (nome) VALUES (:nome)';
     $stmt = $conn->prepare($sql);
-    $stmt->execute(['nome' => $nome]);
+    $stmt->execute(compact('nome'));
 }
 
 // Redireciona para index.php após inserir
