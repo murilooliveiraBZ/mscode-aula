@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/Database.php';
+require_once __DIR__ . '/../database/Database.php';
 
 $conn = (new Database())->getConnection();
 
@@ -27,6 +27,6 @@ try {
 }
 
 // Redireciona para index.php após inserir
-header('Location: /aula8/index.php');
+header('Location: /aula8/view/index.php');
 exit;
 
